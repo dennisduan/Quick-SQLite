@@ -1,5 +1,19 @@
 # Quick-SQLite
 
+<div>
+  <p>
+    <a href="https://www.patreon.com/bePatron?u=806427" data-patreon-widget-type="become-patron-button"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="85"></a>
+    <a href="https://discord.gg/gDcqBJJ"><img src="https://discordapp.com/api/guilds/499602039232397343/embed.png" alt="Discord Server" /></a>
+    <a href="https://GitHub.com/MilaBot/Quick-SQLite/stargazers/"><img src="https://img.shields.io/github/stars/MilaBot/Quick-SQLite.svg?style=social&label=Star"></a>
+  </p>
+    
+
+| Documentation | Discord Support | PyPI Page |
+| :---: | :---: | :---: |
+| [quick-sqlite.readthedocs.io/en](https://quick-sqlite.readthedocs.io/en) | [discord.gg/gDcqBJJ](https://discord.gg/gDcqBJJ) | [pypi.org/project/quick-sqlite/](https://pypi.org/project/quick-sqlite/)
+
+</div>
+
 ## Introduction
 
 Quick-SQLite is intended for programmers that dislike the unattractive and needlessly extensive SQLite3 API. Quick-SQLite not only reduces the ugly-looking function set with a clean and organised function set, but it also comes with many useful settings such as auto-commiting, automatic reconnecting, and event listeners. The integrated events listeners - demonstrated later on - are functions inside your script that are called every time something specific happens, for example, the disconnect listener is called everytime the connection disconnects, more on that later.
