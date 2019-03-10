@@ -2,7 +2,7 @@
 
 <div>
   <p>
-    <a href="https://www.patreon.com/bePatron?u=806427" data-patreon-widget-type="become-patron-button"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="85"></a>
+    <a href="https://www.patreon.com/join/JackTEK?" data-patreon-widget-type="become-patron-button"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="85"></a>
     <a href="https://discord.gg/gDcqBJJ"><img src="https://discordapp.com/api/guilds/499602039232397343/embed.png" alt="Discord Server" /></a>
     <a href="https://GitHub.com/MilaBot/Quick-SQLite/stargazers/"><img src="https://img.shields.io/github/stars/MilaBot/Quick-SQLite.svg?style=social&label=Star"></a>
   </p>
@@ -28,7 +28,7 @@ To install Quick-SQLite, just run the following command:
 
 ### SQLite3
 
-```
+```python
 from sqlite3 import connect
 
 with connect("Database.db") as c:
@@ -39,7 +39,7 @@ with connect("Database.db") as c:
 
 ### Quick-SQLite
 
-```
+```python
 from quicksqlite import Connection
 
 c = Connection(path="Database.db", auto_connect=True)
@@ -50,7 +50,7 @@ c.update("Table", "X", f"{c.select('Table', 'Z', column_w='X', value_w='Y')[0]}Y
 
 ### Minimal Usage
 
-```
+```python
 from quicksqlite import Connection
 
 # Define our connection instance
@@ -86,7 +86,7 @@ con.close()
 
 ### Using listeners
 
-```
+```python
 from quicksqlite import Connection
 
 # Define our connection instance
@@ -143,7 +143,7 @@ con.close()
 
 ### In-class Example
 
-```
+```python
 from quicksqlite import Connection
 
 class MyClass(Connection):
