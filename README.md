@@ -14,6 +14,8 @@
 
 </div>
 
+___
+
 ## Introduction
 
 Quick-SQLite is intended for programmers that dislike the unattractive and needlessly extensive SQLite3 API. Quick-SQLite not only reduces the ugly-looking function set with a clean and organised function set, but it also comes with many useful settings such as auto-commiting, automatic reconnecting, and event listeners. The integrated events listeners - demonstrated later on - are functions inside your script that are called every time something specific happens, for example, the disconnect listener is called everytime the connection disconnects, more on that later.
@@ -22,7 +24,7 @@ Quick-SQLite is intended for programmers that dislike the unattractive and needl
 
 To install Quick-SQLite, just run the following command:
 
-```pip install quick-sqlite```
+> *pip install quick-sqlite*
 
 ## Comparison
 
