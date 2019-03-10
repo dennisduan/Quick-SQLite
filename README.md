@@ -8,13 +8,21 @@
   </p>
     
 
-| Documentation | Discord Support | PyPI Page |
-| :---: | :---: | :---: |
-| [quick-sqlite.readthedocs.io](https://quick-sqlite.readthedocs.io/en) | [discord.gg/gDcqBJJ](https://discord.gg/gDcqBJJ) | [pypi.org/project/quick-sqlite](https://pypi.org/project/quick-sqlite)
+| Documentation | Discord Support | PyPI Page | Dependants |
+| :---: | :---: | :---: | :---: |
+| [quick-sqlite.readthedocs.io](https://quick-sqlite.readthedocs.io/en) | [discord.gg/gDcqBJJ](https://discord.gg/gDcqBJJ) | [pypi.org/project/quick-sqlite](https://pypi.org/project/quick-sqlite) | [github.com/MilaBot/Quick-SQLite/network/dependents](https://github.com/MilaBot/Quick-SQLite/network/dependents)
 
 </div>
 
 ___
+
+- Data is persistent and file-stored
+- Designed to be easy & clean to use by anyone
+- [Discord Support](https://discord.gg/gDcqBJJ)
+- Supports the entire SQL API
+- Built with event listeners for monitoring
+
+---
 
 ## Introduction
 
