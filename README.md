@@ -26,7 +26,7 @@ with connect("Database.db") as c:
 ### Quick-SQLite
 
 ```
-from quick-sqlite import Connection
+from quicksqlite import Connection
 
 c = Connection(path="Database.db", auto_connect=True)
 c.update("Table", "X", f"{c.select('Table', 'Z', column_w='X', value_w='Y')[0]}Y")
