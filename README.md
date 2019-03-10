@@ -10,7 +10,7 @@
 
 | Documentation | Discord Support | PyPI Page |
 | :---: | :---: | :---: |
-| [quick-sqlite.readthedocs.io/en](https://quick-sqlite.readthedocs.io/en) | [discord.gg/gDcqBJJ](https://discord.gg/gDcqBJJ) | [pypi.org/project/quick-sqlite/](https://pypi.org/project/quick-sqlite/)
+| [quick-sqlite.readthedocs.io](https://quick-sqlite.readthedocs.io/en) | [discord.gg/gDcqBJJ](https://discord.gg/gDcqBJJ) | [pypi.org/project/quick-sqlite](https://pypi.org/project/quick-sqlite)
 
 </div>
 
