@@ -10,7 +10,7 @@
 
 | Documentation | Discord Support | PyPI Page | Dependants |
 | :---: | :---: | :---: | :---: |
-| [quick-sqlite.readthedocs.io](https://quick-sqlite.readthedocs.io/en) | [discord.gg/gDcqBJJ](https://discord.gg/gDcqBJJ) | [pypi.org/project/quick-sqlite](https://pypi.org/project/quick-sqlite) | [github.com/MilaBot/Quick-SQLite/network/dependents](https://github.com/MilaBot/Quick-SQLite/network/dependents)
+| [quick-sqlite.milabot.xyz](https://quick-sqlite.milabot.xyz) | [discord.gg/gDcqBJJ](https://discord.gg/gDcqBJJ) | [pypi.org/project/quick-sqlite](https://pypi.org/project/quick-sqlite) | [github.com/MilaBot/Quick-SQLite/network/dependents](https://github.com/MilaBot/Quick-SQLite/network/dependents)
 
 </div>
 
