@@ -1,0 +1,644 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A high-level SQLite3 wrapper that makes using SQLite databases much, much easier.">
+      
+      
+      
+        <meta name="author" content="Mila Software">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>API Reference - Quick-SQLite</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Nunito","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#api-reference" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Quick-SQLite" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Quick-SQLite
+            </span>
+            <span class="md-header-nav__topic">
+              API Reference
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/MilaBot/Quick-SQLite" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    MilaBot/Quick-SQLite
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." title="Quick-SQLite" class="md-tabs__link">
+          Quick-SQLite
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="Documentation" class="md-tabs__link md-tabs__link--active">
+          Documentation
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Quick-SQLite" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.png" width="48" height="48">
+      
+    </a>
+    Quick-SQLite
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/MilaBot/Quick-SQLite" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    MilaBot/Quick-SQLite
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Quick-SQLite
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Quick-SQLite
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Documentation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Documentation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API Reference
+      </label>
+    
+    <a href="./" title="API Reference" class="md-nav__link md-nav__link--active">
+      API Reference
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection" title="Connection" class="md-nav__link">
+    Connection
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../getting-started/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quick-start/" title="Quick Start" class="md-nav__link">
+      Quick Start
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection" title="Connection" class="md-nav__link">
+    Connection
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="api-reference">API Reference</h1>
+<p>This page will run through every portion of the module in depth.</p>
+<h2 id="connection">Connection</h2>
+<div>
+    <p style="font-size: 20px;">
+        <blockquote>
+            <b><i>class</i></b> quick-sqlite.<b>Connection</b>(<i>path=":memory:", auto_commit=True, reconnects=3 auto_connect=False</i>)
+        </blockquote>
+    </p>
+    <p>Represents a database connection</p><hr>
+    <p>
+        <b><code id="quick-sqlite.Connection.path">path</code></b><br><br>
+                The database file location to connect to. If this file doesn't exist it is automatically created. If the path is specified as <code>:memory:</code>, the database is held in RAM; beware that if the memory is wiped (i.e: the machine powers down) then all held data is lost.<br><br>
+                Defaults to <code>:memory:</code>
+        <br><hr>
+        <b><code id="quick-sqlite.Connection.auto_commit">auto_commit</code></b><br><br>
+                <a href="https://docs.python.org/3/library/functions.html#bool">bool</a> - If set to True, changes are automatically saved when an operation is executed, this removes access to the <a href="/docs#quick-sqlite.Connection.commit">Connection.commit</a> function. If this is set to False, changes can only be saved by calling the <a href="/docs#quick-sqlite.Connection.commit">Connection.commit</a> function.<br><br>
+                Defaults to <code>True</code>
+        <br><hr>
+        <b><code id="quick-sqlite.Connection.reconnects">reconnects</code></b><br><br>
+                <a href="https://docs.python.org/3/library/functions.html#int">int</a> - The number of times to reconnect upon disconnect before erroring and closing the connection. Reconnects aren't very common but will be triggered if a database becomes locked.<br><br>
+                Defaults to <code>3</code>
+        <br><hr>
+        <b><code id="quick-sqlite.Connection.auto_connect">auto_connect</code></b><br><br>
+                <a href="https://docs.python.org/3/library/functions.html#bool">bool</a> - If set to True, a connection is automatically established, this removes access to the <a href="/docs#quick-sqlite.Connection.connect">Connection.connect</a> function, however the <a href="/docs#events.on_connect">on_connect</a> event won't be triggered. If this is set to False, a connection can only be established by calling the <a href="/docs#quick-sqlite.Connection.connect">Connection.connect</a> function, however <a href="/docs#events.on_connect">on_connect</a> will be called upon connection.<br><br>
+                Defaults to <code>False</code>
+        <br><hr>
+        <code id="quick-sqlite.Connection.connect"><b>connect</b>()</code><br><br>
+                Attempts to connect to the database & triggers the <a href="/docs#events.on_connect">on_connect</a> event. Only available if <a href="/docs#quick-sqlite.Connection.auto_connect">Connection.auto_connect</a> is set to <code>False</code>
+        <br><hr>
+        <code id="quick-sqlite.Connection.close"><b>close</b>()</code><br><br>
+                Attempts to close to the database & triggers the <a href="/docs#events.on_disconnect">on_disconnect</a> event.
+        <br><hr>
+        <code id="quick-sqlite.Connection.commit"><b>commit</b>()</code><br><br>
+                Attempts to commit pending changes & triggers the <a href="/docs#events.on_commit">on_commit</a> event. Only available if <a href="/docs#quick-sqlite.Connection.auto_commit">Connection.auto_commit</a> is set to <code>False</code>
+        <br><hr>
+        <code id="quick-sqlite.Connection.rollback"><b>rollback</b>()</code><br><br>
+                Rolls back the most recent commit & triggers the <a href="/docs#events.on_rollback">on_rollback</a> event.
+        <br><hr>
+        <code id="quick-sqlite.Connection.listen"><b>listen</b>(<i>func, name=None</i>)</code><br><br>
+                Adds a function to the event listener cache. When an event is dispatched, the function in cache is called. This can be used as a function decorator or as an independent function.<br><br><b>Parameters</b><br><ul><li><b>func</b> - The function to add to event cache.</li><li><b>name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the event listener to register as.</li></ul>
+        <hr>
+        <code id="quick-sqlite.Connection.create_table"><b>create_table</b>(<i>table_name, values, types</i>)</code><br><br>
+                Creates a table in the connected database, if it already exists, the error is silently suppressed.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to create.</li><li><b>values</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - A list of column names.</li><li><b>types</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - The respective data types for each column in values.</li></ul>
+        <hr>
+        <code id="quick-sqlite.Connection.drop_table"><b>create_table</b>(<i>table_name</i>)</code><br><br>
+                Deletes a table in the connected database.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete.</li></ul>
+        <hr>
+        <code id="quick-sqlite.Connection.insert"><b>insert</b>(<i>table_name, values</i>)</code><br><br>
+                Inserts a list of data into a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to insert into.</li><li><b>values</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - A list of data to insert.</li></ul>
+        <hr>
+        <code id="quick-sqlite.Connection.delete"><b>delete</b>(<i>table_name, column_w=None, value_w=None</i>)</code><br><br>
+                Deletes data from a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li></ul>
+        <hr>
+        <code id="quick-sqlite.Connection.update"><b>update</b>(<i>table_name, column, value, column_w=None, value_w=None</i>)</code><br><br>
+                Updates a row in the provided table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>column</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column to update.</li><li><b>value</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to update the column to.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li></ul>
+        <hr>
+        <code id="quick-sqlite.Connection.select"><b>select</b>(<i>table_name, select, column_w=None, value_w=None, fetchall=False, limit=None, random=False</i>)</code><br><br>
+                Selects data from a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>select</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column to select.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li><li><b>fetchall</b> (<a href="https://docs.python.org/3/library/functions.html#bool">bool</a>) - Whether to fetch all relevant rows or just the first.</li><li><b>limit</b> (<a href="https://docs.python.org/3/library/functions.html#int">int</a>) - The max number of rows to select, defaults to <code>1</code>.</li><li><b>random</b> (<a href="https://docs.python.org/3/library/functions.html#bool">bool</a>) - Whether or not fetch the rows in a random order.</li></ul>
+    </p>
+</div>
+
+<h2 id="events">Event Reference</h2>
+
+<div>
+    <p style="font-size: 20px;">
+        <blockquote id="events.on_connect-on_disconnect">
+            quick-sqlite.<b>on_connect</b>(<i>database</i>)<br>
+            quick-sqlite.<b>on_disconnect</b>(<i>database</i>)
+        </blockquote>
+        <br>
+            An event called whenever a connection is successfully established or closed. The on_connect event is not available if <a href="/docs#quick-sqlite.Connection.auto_connect">Connection.auto_connect</a> is set to <code>True</code>.<br><br><b>Parameters</b><br><ul><li><b>database</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The path to the relevant database.</li></ul>
+        <hr>
+        <blockquote id="events.on_reconnect">
+            quick-sqlite.<b>on_reconnect</b>(<i>database, attempt</i>)
+        </blockquote>
+        <br>
+            An event called whenever a connection is re-established.<br><br><b>Parameters</b><br><ul><li><b>database</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The path to the relevant database.</li><li><b>attempt</b> (<a href="https://docs.python.org/3/library/functions.html#int">int</a>) - The number of attempts taken to reconnect.</li></ul>
+        <hr>
+        <blockquote id="events.on_commit">
+            quick-sqlite.<b>on_commit</b>(<i>database</i>)
+        </blockquote>
+        <br>
+            An event called whenever a database is commited to.<ul><li><b>database</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The path to the relevant database.</li></ul>
+        <hr>
+        <blockquote id="events.on_rollback">
+            quick-sqlite.<b>on_rollback</b>(<i>database</i>)
+        </blockquote>
+        <br>
+            An event called whenever a database's most recent commit is rolled back.<ul><li><b>database</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The path to the relevant database.</li></ul>
+        <hr>
+        <blockquote id="events.on_transaction_success">
+            quick-sqlite.<b>on_transaction_success</b>(<i>database, action</i>)
+        </blockquote>
+        <br>
+            An event called whenever an operation is performed on a database.<ul><li><b>database</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The path to the relevant database.</li><li><b>action</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The action executed on the database.</li></ul>
+    </p>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../getting-started/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Getting Started
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            &copy; Mila Software | All Rights Reserved
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/MilaBot" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://milabot.xyz" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://discord.gg/gDcqBJJ" class="md-footer-social__link fa fa-life-ring"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
