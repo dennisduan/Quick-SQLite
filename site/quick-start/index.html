@@ -496,7 +496,7 @@
     <li>Next, we have a <a href="/docs#events.on_reconnect">on_reconnect</a> listener, if the connection is lost, or if the database is locked, we attempt to reconnect 3 times. If we manage to reconnect, this function is triggered.</li>
     <li>Our connection isn't actually established yet, to do so we need to call the <a href="/docs#quick-sqlite.Connection.connect">Connection.connect</a> function.</li>
     <li>We want to create a table named <code>Employees</code>, so, we call the <a href="/docs#quick-sqlite.Connection.create_table">Connection.create_table</a> function, providing <code>Employees</code> as the table name, <code>["Name", "Age", "Salary"]</code> as the column names and <code>["TEXT", "INTEGER", "REAL"]</code> as the respective column types.</li>
-    <li>Now that we have a table, we want to call the <a href="/docs#quick-sqlite.Connection.insert">Connection.insert</a>function, providing <code>Employees</code> as the table we want to insert into and <code>["Damien", 32, 80.00]</code> as the data to enter into the database.</li>
+    <li>Now that we have a table, we want to call the <a href="/docs#quick-sqlite.Connection.insert">Connection.insert</a> function, providing <code>Employees</code> as the table we want to insert into and <code>["Damien", 32, 80.00]</code> as the data to enter into the database.</li>
     <li>Since <a href="/docs#quick-sqlite.Connection.auto_commit">Connection.auto_commit</a> defaults to <code>True</code>, we don't need to call <a href="/docs#quick-sqlite.Connection.commit">Connection.commit</a>, now all that's left to do is to close the connection by calling <a href="/docs#quick-sqlite.Connection.close">Connection.close</a>.</li>
 </ol>
                 

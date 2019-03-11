@@ -473,7 +473,7 @@
                 Defaults to <code>True</code>
         <br><hr>
         <b><code id="quick-sqlite.Connection.reconnects">reconnects</code></b><br><br>
-                <a href="https://docs.python.org/3/library/functions.html#int">int</a> - The number of times to reconnect upon disconnect before erroring and closing the connection. Reconnections aren't very common but will be triggered if a database becomes locked.<br><br>
+                <a href="https://docs.python.org/3/library/functions.html#int">int</a> - The number of times to reconnect upon disconnect before erroring and closing the connection. Reconnects aren't very common but will be triggered if a database becomes locked.<br><br>
                 Defaults to <code>3</code>
         <br><hr>
         <b><code id="quick-sqlite.Connection.auto_connect">auto_connect</code></b><br><br>
@@ -493,7 +493,7 @@
                 Rolls back the most recent commit & triggers the <a href="/docs#events.on_rollback">on_rollback</a> event.
         <br><hr>
         <code id="quick-sqlite.Connection.listen"><b>listen</b>(<i>func, name=None</i>)</code><br><br>
-                Adds a function to the event listener cache. When an event is dispatched, the function in cache is called. This can be used as a function decorator or as an independant function.<br><br><b>Parameters</b><br><ul><li><b>func</b> - The function to add to event cache.</li><li><b>name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the event listener to register as.</li></ul>
+                Adds a function to the event listener cache. When an event is dispatched, the function in cache is called. This can be used as a function decorator or as an independent function.<br><br><b>Parameters</b><br><ul><li><b>func</b> - The function to add to event cache.</li><li><b>name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the event listener to register as.</li></ul>
         <hr>
         <code id="quick-sqlite.Connection.create_table"><b>create_table</b>(<i>table_name, values, types</i>)</code><br><br>
                 Creates a table in the connected database, if it already exists, the error is silently suppressed.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to create.</li><li><b>values</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - A list of column names.</li><li><b>types</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - The respective data types for each column in values.</li></ul>
@@ -542,7 +542,7 @@
             quick-sqlite.<b>on_rollback</b>(<i>database</i>)
         </blockquote>
         <br>
-            An event called whenever a database's most recent commit is rolledback.<ul><li><b>database</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The path to the relevant database.</li></ul>
+            An event called whenever a database's most recent commit is rolled back.<ul><li><b>database</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The path to the relevant database.</li></ul>
         <hr>
         <blockquote id="events.on_transaction_success">
             quick-sqlite.<b>on_transaction_success</b>(<i>database, action</i>)
