@@ -376,6 +376,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exceptions" title="Exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+      
       
       
       
@@ -450,6 +457,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exceptions" title="Exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+</li>
+      
       
       
       
@@ -472,8 +486,8 @@
 <h2 id="connection">Connection</h2>
 <div>
     <p style="font-size: 20px;">
-        <blockquote>
-            <b><i>class</i></b> quick-sqlite.<b>Connection</b>(<i>path=":memory:", auto_commit=True, reconnects=3 auto_connect=False</i>)
+        <blockquote id="quick-sqlite.Connection">
+            <b><i>class</i></b> quick-sqlite.<b>Connection</b>(<i>path=":memory:", auto_commit=True, reconnects=3, auto_connect=False, timeout=5</i>)
         </blockquote>
     </p>
     <p>Represents a database connection</p><hr>
@@ -494,8 +508,12 @@
                 <a href="https://docs.python.org/3/library/functions.html#bool">bool</a> - If set to True, a connection is automatically established, this removes access to the <a href="/docs#quick-sqlite.Connection.connect">Connection.connect</a> function, however the <a href="/docs#events.on_connect">on_connect</a> event won't be triggered. If this is set to False, a connection can only be established by calling the <a href="/docs#quick-sqlite.Connection.connect">Connection.connect</a> function, however <a href="/docs#events.on_connect">on_connect</a> will be called upon connection.<br><br>
                 Defaults to <code>False</code>
         <br><hr>
+        <b><code id="quick-sqlite.Connection.timeout">timeout</code></b><br><br>
+                <a href="https://docs.python.org/3/library/functions.html#int">int</a> - The number of seconds to wait before attempting to execute some SQL that was blocked due to database locking.<br><br>
+                Defaults to <code>5</code>
+        <br><hr>
         <code id="quick-sqlite.Connection.connect"><b>connect</b>()</code><br><br>
-                Attempts to connect to the database & triggers the <a href="/docs#events.on_connect">on_connect</a> event. Only available if <a href="/docs#quick-sqlite.Connection.auto_connect">Connection.auto_connect</a> is set to <code>False</code>
+                Attempts to connect to the database & triggers the <a href="/docs#events.on_connect">on_connect</a> event. Only available if <a href="/docs#quick-sqlite.Connection.auto_connect">Connection.auto_connect</a> is set to <code>False</code><br><br><b>Raises</b><br><ul><li><a href="#exceptions.ConnectError">ConnectError</a> - The connection couldn't be established.</li></ul>
         <br><hr>
         <code id="quick-sqlite.Connection.close"><b>close</b>()</code><br><br>
                 Attempts to close to the database & triggers the <a href="/docs#events.on_disconnect">on_disconnect</a> event.
@@ -507,30 +525,30 @@
                 Rolls back the most recent commit & triggers the <a href="/docs#events.on_rollback">on_rollback</a> event.
         <br><hr>
         <code id="quick-sqlite.Connection.listen"><b>listen</b>(<i>func, name=None</i>)</code><br><br>
-                Adds a function to the event listener cache. When an event is dispatched, the function in cache is called. This can be used as a function decorator or as an independent function.<br><br><b>Parameters</b><br><ul><li><b>func</b> - The function to add to event cache.</li><li><b>name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the event listener to register as.</li></ul>
+                Adds a function to the event listener cache. When an event is dispatched, the function in cache is called. This can be used as a function decorator or as an independent function.<br><br><b>Parameters</b><br><ul><li><b>func</b> - The function to add to event cache.</li><li><b>name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the event listener to register as, defaults to <code>func.__name__</code>.</li></ul><br><br><b>Raises</b><br><ul><li><a href="#exceptions.ListenError">ListenError</a> - The event isn't supported.</li></ul>
         <hr>
         <code id="quick-sqlite.Connection.create_table"><b>create_table</b>(<i>table_name, values, types</i>)</code><br><br>
-                Creates a table in the connected database, if it already exists, the error is silently suppressed.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to create.</li><li><b>values</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - A list of column names.</li><li><b>types</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - The respective data types for each column in values.</li></ul>
+                Creates a table in the connected database, if it already exists, the error is silently suppressed.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to create.</li><li><b>values</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - A list of column names.</li><li><b>types</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - The respective data types for each column in values.</li></ul><br><br><b>Raises</b><br><ul><li><a href="#exceptions.DBError">DBError</a> - The inputted data was of incorrect format or the database is locked.</li></ul>
         <hr>
-        <code id="quick-sqlite.Connection.drop_table"><b>create_table</b>(<i>table_name</i>)</code><br><br>
-                Deletes a table in the connected database.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete.</li></ul>
+        <code id="quick-sqlite.Connection.drop_table"><b>drop_table</b>(<i>table_name</i>)</code><br><br>
+                Deletes a table in the connected database.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete.</li></ul><br><br><b>Raises</b><br><ul><li><a href="#exceptions.DBError">DBError</a> - The inputted data was of incorrect format or the database is locked.</li></ul>
         <hr>
         <code id="quick-sqlite.Connection.insert"><b>insert</b>(<i>table_name, values</i>)</code><br><br>
-                Inserts a list of data into a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to insert into.</li><li><b>values</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - A list of data to insert.</li></ul>
+                Inserts a list of data into a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to insert into.</li><li><b>values</b> (<a href="https://docs.python.org/3/library/functions.html#list">list</a>) - A list of data to insert.</li></ul><br><br><b>Raises</b><br><ul><li><a href="#exceptions.DBError">DBError</a> - The inputted data was of incorrect format or the database is locked.</li></ul>
         <hr>
         <code id="quick-sqlite.Connection.delete"><b>delete</b>(<i>table_name, column_w=None, value_w=None</i>)</code><br><br>
-                Deletes data from a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li></ul>
+                Deletes data from a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li></ul><br><br><b>Raises</b><br><ul><li><a href="#exceptions.DBError">DBError</a> - The inputted data was of incorrect format or the database is locked.</li></ul>
         <hr>
         <code id="quick-sqlite.Connection.update"><b>update</b>(<i>table_name, column, value, column_w=None, value_w=None</i>)</code><br><br>
-                Updates a row in the provided table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>column</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column to update.</li><li><b>value</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to update the column to.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li></ul>
+                Updates a row in the provided table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>column</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column to update.</li><li><b>value</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to update the column to.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li></ul><br><br><b>Raises</b><br><ul><li><a href="#exceptions.DBError">DBError</a> - The inputted data was of incorrect format or the database is locked.</li></ul>
         <hr>
         <code id="quick-sqlite.Connection.select"><b>select</b>(<i>table_name, select, column_w=None, value_w=None, fetchall=False, limit=None, random=False</i>)</code><br><br>
-                Selects data from a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>select</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column to select.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li><li><b>fetchall</b> (<a href="https://docs.python.org/3/library/functions.html#bool">bool</a>) - Whether to fetch all relevant rows or just the first.</li><li><b>limit</b> (<a href="https://docs.python.org/3/library/functions.html#int">int</a>) - The max number of rows to select, defaults to <code>1</code>.</li><li><b>random</b> (<a href="https://docs.python.org/3/library/functions.html#bool">bool</a>) - Whether or not fetch the rows in a random order.</li></ul>
+                Selects data from a table.<br><br><b>Parameters</b><br><ul><li><b>table_name</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The name of the table to delete from.</li><li><b>select</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column to select.</li><li><b>column_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The column that is searched for when finding the entries to delete.</li><li><b>value_w</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The data to look for alongside column_w.</li><li><b>fetchall</b> (<a href="https://docs.python.org/3/library/functions.html#bool">bool</a>) - Whether to fetch all relevant rows or just the first.</li><li><b>limit</b> (<a href="https://docs.python.org/3/library/functions.html#int">int</a>) - The max number of rows to select, defaults to <code>1</code>.</li><li><b>random</b> (<a href="https://docs.python.org/3/library/functions.html#bool">bool</a>) - Whether or not fetch the rows in a random order.</li></ul><br><b>Returns</b><br><ul><li>data (<a href="https://docs.python.org/3/library/functions.html#list">list</a>/<a href="https://docs.python.org/3/library/functions.html#tuple">tuple</a>) - The data that was fetched from the database.</li></ul><br><b>Raises</b><br><ul><li><a href="#exceptions.DBError">DBError</a> - The inputted data was of incorrect format or the database is locked.</li></ul>
     </p>
 </div>
 
 <h2 id="event-reference">Event Reference</h2>
-<div id="events" style="display: none;"></div>
+<p id="events"></p>
 
 <div>
     <p style="font-size: 20px;">
@@ -564,6 +582,37 @@
         </blockquote>
         <br>
             An event called whenever an operation is performed on a database.<ul><li><b>database</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The path to the relevant database.</li><li><b>action</b> (<a href="https://docs.python.org/3/library/functions.html#str">str</a>) - The action executed on the database.</li></ul>
+    </p>
+</div>
+
+<h2 id="exceptions">Exceptions</h2>
+<p id="exceptions"></p>
+
+<div>
+    <p style="font-size: 20px">
+        <blockquote id="exceptions.Error">
+            quick-sqlite.<b>Error</b>()
+        </blockquote>
+        <br>
+            Base class <a href="https://docs.python.org/3/library/exceptions.html">Exception</a> inherited by all other Exceptions.
+        <hr>
+        <blockquote id="exceptions.ListenError">
+            quick-sqlite.<b>ListenError</b>()
+        </blockquote>
+        <br>
+            Exception raised when there is an issue regarding a listener, often when the handler can't understand the event you're attempting to match your listener with.
+        <hr>
+        <blockquote id="exceptions.ConnectError">
+            quick-sqlite.<b>ConnectError</b>()
+        </blockquote>
+        <br>
+            An Exception commonly referenced regarding the initial connection with a specific database.
+        <hr>
+        <blockquote id="exceptions.DBError">
+            quick-sqlite.<b>DBError</b>()
+        </blockquote>
+        <br>
+            This error is commonly the result of a mistake made by the end user, it tends to be caused due to incorrect data inputs or when a database is locked due to another connection having a pending commit hanging around.
     </p>
 </div>
                 
