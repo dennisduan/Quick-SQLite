@@ -162,14 +162,14 @@ class MyClass(Connection):
         super().__init__(path="Database.db", auto_commit=True, reconnects=5)
         
         # Setup listeners
-        self.listen(self.on_connect)
+        self.listen(self.some_function, name="connect")
         self.listen(self.on_disconnect)
         self.listen(self.on_reconnect)
         self.listen(self.on_success)
         self.listen(self.on_rollback)
         self.listen(self.on_commit)
 
-    def on_connect(self, db):
+    def some_function(self, db):
         print(f"Connected to {db}")
 
     def on_disconnect(self, db):
