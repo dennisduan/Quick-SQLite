@@ -170,7 +170,7 @@ class Connection():
             self._handler.execute(f"CREATE TABLE IF NOT EXISTS {table_name} ({', '.join(reversed([x.upper() for x in values]))})")
         
         except Exception as e:
-            if re.search("database is locked", e, re.IGNORECASE):
+            if re.search("database is locked", str(e), re.IGNORECASE):
                 self._handle_locked(self.create_table, table_name, values, types)
 
             return DBError(e)
@@ -182,7 +182,7 @@ class Connection():
             self._handler.execute(f"DROP TABLE {table_name}")
         
         except Exception as e:
-            if re.search("database is locked", e, re.IGNORECASE):
+            if re.search("database is locked", str(e), re.IGNORECASE):
                 self._handle_locked(self.drop_table, table_name)
 
             return DBError(e)
@@ -196,7 +196,7 @@ class Connection():
             self._handler.execute(f"INSERT INTO {table} VALUES ({ques})")
 
         except Exception as e:
-            if re.search("database is locked", e, re.IGNORECASE):
+            if re.search("database is locked", str(e), re.IGNORECASE):
                 self._handle_locked(self.insert, table, values)
 
             return DBError(e)
@@ -223,7 +223,7 @@ class Connection():
                 self._handler.execute(f"DELETE FROM {table} {ques}", (value_w,))
         
         except Exception as e:
-            if re.search("database is locked", e, re.IGNORECASE):
+            if re.search("database is locked", str(e), re.IGNORECASE):
                 self._handle_locked(self.delete, table, column_w, value_w)
 
             return DBError(e)
@@ -244,7 +244,7 @@ class Connection():
                 self._handler.execute(f"UPDATE {table} SET {column}=?", (value,))
         
         except Exception as e:
-            if re.search("database is locked", e, re.IGNORECASE):
+            if re.search("database is locked", str(e), re.IGNORECASE):
                 self._handle_locked(self.update, table, column, value, column_w, value_w)
 
             return DBError(e)
@@ -286,7 +286,7 @@ class Connection():
                     data = self._handler.execute(f"SELECT {', '.join(select)} FROM {table}{random}{limit}").fetchall()
         
         except Exception as e:
-            if re.search("database is locked", e, re.IGNORECASE):
+            if re.search("database is locked", str(e), re.IGNORECASE):
                 self._handle_locked(self.select, table, select, column_w, value_w, fetchall, limit, random)
 
             return DBError(e)
@@ -297,4 +297,3 @@ class Connection():
         self._dispatch_listener("transaction_success", self.path, "select")
 
         return data
-
