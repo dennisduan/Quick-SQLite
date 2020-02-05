@@ -76,7 +76,7 @@ con.insert("Employees", ["Andrew Anderson", 32, 100.00])
 con.update("Employees", "Salary", 110.00, column_w="Name", value_w="Andrew Anderson")
 
 # Select row
-print(con.select("Employees", "Age", column_w="Name", value="Andrew Anderson", fetchall=False, random=False, limit=1))
+print(con.select("Employees", "Age", column_w="Name", value_w="Andrew Anderson", fetchall=False, random=False, limit=1))
 
 # Delete row
 con.delete("Employees", column_w="Name", value_w="Andrew Anderson")
