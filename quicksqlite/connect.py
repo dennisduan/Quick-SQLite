@@ -166,6 +166,8 @@ class Connection():
             values.remove(x)
             values.insert(i, f"{x} {types[i]}")
 
+            i += 1
+
         try:
             self._handler.execute(f"CREATE TABLE IF NOT EXISTS {table_name} ({', '.join(reversed([x.upper() for x in values]))})")
         
